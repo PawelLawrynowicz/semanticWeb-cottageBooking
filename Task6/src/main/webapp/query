@@ -1,11 +1,38 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX : <http://localhost:8081/task6/BookingDB.ttl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX e: <http://example.org/ex>
-PREFIX b: <http://example.org/ItemOntology>
-
-SELECT ?itemId 
-WHERE {  ?item rdf:type b:Item. 
-         ?item b:hasParam01 "p1".
-         ?item b:hasParam02 "p2".
-         ?item b:hasParam03 "p3".
-         ?item b:itemID ?itemId.
-      }
+SELECT  ?bookerName ?bookingNumber ?cottageAddress
+        ?cottageImage ?cottagePlaces ?cottageBedrooms
+        ?cottageDistanceFromLake ?cottageClosestCity
+        ?cottageDistanceToCity ?bookingStartDate
+        ?bookingPeriod
+WHERE {
+    #internal
+    ?booking rdf:type :Booking .
+    ?cottage rdf:type :Cottage .
+    ?booking :hasCottage ?cottage .
+    ?cottage :hasName ?cottageName.
+    #external
+    ?booking :hasBookerName ?bookerName .
+    ?booking :hasId ?bookingNumber .
+    ?cottage :hasAddress ?cottageAddress .
+    ?cottage :hasImage ?cottageImage .
+    ?cottage :hasPlaces ?cottagePlaces .
+    ?cottage :hasBedrooms ?cottageBedrooms .
+    ?cottage :hasDistanceFromTheLake ?cottageDistanceFromLake .
+    ?cottage :hasClosestCity ?cottageClosestCity .
+    ?cottage :hasDistanceToCity ?cottageDistanceToCity .
+    ?booking :hasStartDate ?bookingStartDate .
+    ?booking :hasBookingDuration ?bookingPeriod .
+  	?booking :startDayMaxShift ?bookingShift .
+    #Joona
+    FILTER REGEX(?bookerName, 'Joona', 'i') .
+   	FILTER (?cottagePlaces > 0) .
+    FILTER (?cottageBedrooms > 0) .
+	FILTER (?cottageDistanceFromLake > 0) .
+  	FILTER REGEX(?cottageClosestCity, '', 'i') .
+  	FILTER (?cottageDistanceToCity > 0) .
+  	FILTER (?bookingPeriod > 0) .
+  	FILTER (?bookingStartDate > "2022-01-01"^^xsd:date) .
+ 	FILTER (?bookingShift > 0) .
+}

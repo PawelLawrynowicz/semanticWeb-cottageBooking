@@ -1,142 +1,136 @@
-@prefix : <http://localhost:8081/task6/BookingDB.ttl#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix :     <http://localhost:8081/task6/BookingDB.ttl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-#################################################################
-#    Classes
-#################################################################
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 
-:Booking a rdfs:Class .
-:Cottage a rdfs:Class .
+:Cottage  rdf:type  rdfs:Class .
+:Booking  rdf:type  rdfs:Class .
+:hasPlaces  rdf:type  rdf:Property ;
+            rdfs:domain  :Cottage ;
+            rdfs:range   xsd:nonNegativeInteger .
 
-#################################################################
-#    Object Properties
-#################################################################
+:hasBedrooms  rdf:type  rdf:Property ;
+              rdfs:domain  :Cottage ;
+              rdfs:range   xsd:nonNegativeInteger .
 
-:hasCottage a  rdf:Property ;
-            rdfs:domain :Booking ;
-            rdfs:range  :Cottage .
+:hasClosestCity  rdf:type  rdf:Property ;
+                 rdfs:domain  :Cottage ;
+                 rdfs:range   xsd:string .
 
-#################################################################
-#    Data properties
-#################################################################
+:hasBookerName  rdf:type  rdf:Property ;
+                rdfs:domain  :Booking ;
+                rdfs:range   xsd:string .
 
-#Booking properties
-:hasId a rdf:Property ;
-       rdfs:domain :Booking ;
-       rdfs:range  xsd:integer .
-:hasBookerName a rdf:Property ;
-               rdfs:domain :Booking ;
-               rdfs:range  xsd:string .
-:hasStartDate a rdf:Property ;
-              rdfs:domain :Booking ;
-              rdfs:range  xsd:date .
-:hasBookingDuration a rdf:Property ;
-                    rdfs:domain :Booking ;
-                    rdfs:range  xsd:nonNegativeInteger .
-:startDayMaxShift a rdf:Property ;
-                  rdfs:domain :Booking ;
-                  rdfs:range  xsd:integer .
+:hasImage  rdf:type  rdf:Property ;
+           rdfs:domain  :Cottage ;
+           rdfs:range   xsd:string .
 
-#Cottage properties
-:hasName  a rdf:Property ;
-          rdfs:domain :Cottage ;
-          rdfs:range xsd:string .
-:hasDistanceFromTheLake a rdf:Property ;
-                        rdfs:domain :Cottage ;
-                        rdfs:range  xsd:float .
-:hasBedrooms a rdf:Property ;
-             rdfs:domain :Cottage ;
-             rdfs:range  xsd:nonNegativeInteger .
-:hasPlaces a rdf:Property ;
-           rdfs:domain :Cottage ;
-           rdfs:range  xsd:nonNegativeInteger .
-:hasClosestCity a rdf:Property ;
-                rdfs:domain :Cottage ;
-                rdfs:range  xsd:string .
-:hasDistanceToCity a rdf:Property ;
-                   rdfs:domain :Cottage ;
-                   rdfs:range  xsd:float .
-:hasAddress a rdf:Property ;
-            rdfs:domain :Cottage ;
-            rdfs:range  xsd:string .
-:hasImage a rdf:Property ;
-          rdfs:domain :Cottage ;
-          rdfs:range  xsd:string .
+:hasId  rdf:type     rdf:Property ;
+        rdfs:domain  :Booking ;
+        rdfs:range   xsd:integer .
 
-#################################################################
-#    Individuals
-#################################################################
+:startDayMaxShift  rdf:type  rdf:Property ;
+                   rdfs:domain  :Booking ;
+                   rdfs:range   xsd:integer .
 
-#Cottages
-:cottage1 a :Cottage ;
-          :hasName "Old Cottage"^^xsd:string ;
-          :hasBedrooms "2"^^xsd:nonNegativeInteger ;
-          :hasPlaces "4"^^xsd:nonNegativeInteger ;
-          :hasDistanceFromTheLake "4.2"^^xsd:float ;
-          :hasClosestCity "Oulu"^^xsd:string ;
-          :hasDistanceToCity "8.4"^^xsd:string ;
-          :hasAddress "Kamapuru 3, 20920 Finland"^^xsd:string ;
-          :hasImage "https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/8/2020/01/Chancellors-Swiss-Cottage-920x616.jpg"^^xsd:string .
+:hasDistanceFromTheLake rdf:type     rdf:Property ;
+                        rdfs:domain  :Cottage ;
+                        rdfs:range   xsd:float .
 
-:cottage2 a :Cottage ;
-          :hasName "New Cottage"^^xsd:string ;
-          :hasBedrooms "4"^^xsd:nonNegativeInteger ;
-          :hasPlaces "16"^^xsd:nonNegativeInteger ;
-          :hasDistanceFromTheLake "1.2"^^xsd:float ;
-          :hasClosestCity "Tampere"^^xsd:string ;
-          :hasDistanceToCity "2.4"^^xsd:string ;
-          :hasAddress "Tamperele 67, 42020 Finland"^^xsd:string ;
-          :hasImage "https://www.arts.gov/sites/default/files/styles/nea_media_large_16x9/public/CottageTomMarks.jpeg?h=52605a11&itok=0gO-wCVA"^^xsd:string .
+:hasBookingDuration  rdf:type  rdf:Property ;
+                     rdfs:domain  :Booking ;
+                     rdfs:range   xsd:nonNegativeInteger .
 
-:cottage3 a :Cottage ;
-          :hasName "Rustic Cottage"^^xsd:string ;
-          :hasBedrooms "2"^^xsd:nonNegativeInteger ;
-          :hasPlaces "6"^^xsd:nonNegativeInteger ;
-          :hasDistanceFromTheLake "0.2"^^xsd:float ;
-          :hasClosestCity "Helsinki"^^xsd:string ;
-          :hasDistanceToCity "18.4"^^xsd:string ;
-          :hasAddress "Helele 7, 10210 Finland"^^xsd:string ;
-          :hasImage "https://images.unsplash.com/photo-1604601638406-edc29b54dcf7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"^^xsd:string .
+:hasAddress  rdf:type  rdf:Property ;
+             rdfs:domain  :Cottage ;
+             rdfs:range   xsd:string .
 
-#Bookings
-:booking1 a :Booking ;
-          :hasId "1"^^xsd:integer ;
-          :hasBookerName "Ari Makalen"^^xsd:string ;
-          :hasStartDate "18-07-2023"^^xsd:string ;
-          :hasBookingDuration "7"^^xsd:string ;
-          :startDayMaxShift "30"^^xsd:string ;
-          :hasCottage :cottage1 .
+:hasDistanceToCity  rdf:type  rdf:Property ;
+                    rdfs:domain  :Cottage ;
+                    rdfs:range   xsd:float .
 
-:booking2 a :Booking ;
-          :hasId "2"^^xsd:integer ;
-          :hasBookerName "Uuno Junttila"^^xsd:string ;
-          :hasStartDate "29-01-2023"^^xsd:string ;
-          :hasBookingDuration "7"^^xsd:string ;
-          :startDayMaxShift "30"^^xsd:string ;
-          :hasCottage :cottage1 .
+:hasStartDate  rdf:type  rdf:Property ;
+               rdfs:domain  :Booking ;
+               rdfs:range   xsd:date .
 
-:booking3 a :Booking ;
-          :hasId "3"^^xsd:integer ;
-          :hasBookerName "Arsi Maunu"^^xsd:string ;
-          :hasStartDate "30-01-2023"^^xsd:string ;
-          :hasBookingDuration "7"^^xsd:string ;
-          :startDayMaxShift "30"^^xsd:string ;
-          :hasCottage :cottage2 .
+:hasName  rdf:type   rdf:Property ;
+          rdfs:domain  :Cottage ;
+          rdfs:range   xsd:string .
 
-:booking4 a :Booking ;
-          :hasId "4"^^xsd:integer ;
-          :hasBookerName "Einari Kari"^^xsd:string ;
-          :hasStartDate "31-01-2023"^^xsd:string ;
-          :hasBookingDuration "7"^^xsd:string ;
-          :startDayMaxShift "30"^^xsd:string ;
-          :hasCottage :cottage3 .
+:hasCottage  rdf:type  rdf:Property ;
+             rdfs:domain  :Booking ;
+             rdfs:range   :Cottage .
 
-:booking5 a :Booking ;
-          :hasId "5"^^xsd:integer ;
-          :hasBookerName "Joona Uotila"^^xsd:string ;
-          :hasStartDate "12-11-2022"^^xsd:string ;
-          :hasBookingDuration "14"^^xsd:string ;
-          :startDayMaxShift "30"^^xsd:string ;
-          :hasCottage :cottage1 .
+:cottage1  rdf:type              :Cottage ;
+           :hasAddress              "Kamapuru 3, 20920 Finland" ;
+           :hasBedrooms             "2"^^xsd:nonNegativeInteger ;
+           :hasClosestCity          "Oulu" ;
+           :hasDistanceFromTheLake  "4.2"^^xsd:float ;
+           :hasDistanceToCity       "8.4"^^xsd:float ;
+           :hasImage                "https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/8/2020/01/Chancellors-Swiss-Cottage-920x616.jpg" ;
+           :hasName                 "Old Cottage" ;
+           :hasPlaces               "4"^^xsd:nonNegativeInteger .
+
+:cottage2  rdf:type              :Cottage ;
+           :hasAddress              "Tamperele 67, 42020 Finland" ;
+           :hasBedrooms             "4"^^xsd:nonNegativeInteger ;
+           :hasClosestCity          "Tampere" ;
+           :hasDistanceFromTheLake  "1.2"^^xsd:float ;
+           :hasDistanceToCity       "2.4"^^xsd:float ;
+           :hasImage                "https://www.arts.gov/sites/default/files/styles/nea_media_large_16x9/public/CottageTomMarks.jpeg?h=52605a11&itok=0gO-wCVA" ;
+           :hasName                 "New Cottage" ;
+           :hasPlaces               "16"^^xsd:nonNegativeInteger .
+
+:cottage3  rdf:type              :Cottage ;
+           :hasAddress              "Helele 7, 10210 Finland" ;
+           :hasBedrooms             "2"^^xsd:nonNegativeInteger ;
+           :hasClosestCity          "Helsinki" ;
+           :hasDistanceFromTheLake  "0.2"^^xsd:float ;
+           :hasDistanceToCity       "18.4"^^xsd:float ;
+           :hasImage                "https://images.unsplash.com/photo-1604601638406-edc29b54dcf7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" ;
+           :hasName                 "Rustic Cottage" ;
+           :hasPlaces               "6"^^xsd:nonNegativeInteger .
+
+:booking1  rdf:type          :Booking ;
+           :hasBookerName       "Ari Makalen" ;
+           :hasBookingDuration  "7"^^xsd:nonNegativeInteger ;
+           :hasCottage          :cottage1 ;
+           :hasId               1 ;
+           :hasStartDate        "2023-07-18"^^xsd:date ;
+           :startDayMaxShift    30 .
+
+:booking2  rdf:type          :Booking ;
+           :hasBookerName       "Uuno Junttila" ;
+           :hasBookingDuration  "7"^^xsd:nonNegativeInteger ;
+           :hasCottage          :cottage1 ;
+           :hasId               2 ;
+           :hasStartDate        "2023-01-29"^^xsd:date ;
+           :startDayMaxShift    30 .
+
+:booking3  rdf:type          :Booking ;
+           :hasBookerName       "Arsi Maunu" ;
+           :hasBookingDuration  "7"^^xsd:nonNegativeInteger ;
+           :hasCottage          :cottage2 ;
+           :hasId               3 ;
+           :hasStartDate        "2023-01-30"^^xsd:date ;
+           :startDayMaxShift    30 .
+
+:booking4  rdf:type          :Booking ;
+           :hasBookerName       "Einari Kari" ;
+           :hasBookingDuration  "7"^^xsd:nonNegativeInteger ;
+           :hasCottage          :cottage3 ;
+           :hasId               4 ;
+           :hasStartDate        "2023-01-31"^^xsd:date ;
+           :startDayMaxShift    30 .
+
+:booking5  rdf:type          :Booking ;
+           :hasBookerName       "Joona Uotila" ;
+           :hasBookingDuration  "14"^^xsd:nonNegativeInteger ;
+           :hasCottage          :cottage1 ;
+           :hasId               5 ;
+           :hasStartDate        "2022-11-12"^^xsd:date ;
+           :startDayMaxShift    30 .
+
+
+
 

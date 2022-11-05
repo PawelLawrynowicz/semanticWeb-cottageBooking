@@ -5,9 +5,16 @@ function doQuery()
 	{*/
 		var q_str = 'reqType=doQuery';
 
-		q_str = q_str+'&param01='+document.getElementById('tf01').value;
-		q_str = q_str+'&param02='+document.getElementById('tf02').value;
-		q_str = q_str+'&param03='+document.getElementById('tf03').value;
+		q_str = q_str+'&param01='+document.getElementById('bookerName').value;
+		q_str = q_str+'&param02='+document.getElementById('nGuests').value;
+		q_str = q_str+'&param03='+document.getElementById('nBedrooms').value;
+		q_str = q_str+'&param04='+document.getElementById('distanceToLake').value;
+		q_str = q_str+'&param05='+document.getElementById('closestCity').value;
+		q_str = q_str+'&param06='+document.getElementById('maxDistanceToCity').value;
+		q_str = q_str+'&param07='+document.getElementById('nDays').value;
+		q_str = q_str+'&param08='+document.getElementById('startDate').value;
+		q_str = q_str+'&param09='+document.getElementById('nDaysShift').value;
+
 		doAjax('Booking',q_str,'doQuery_back','post',0);
 	/*}else
 	{

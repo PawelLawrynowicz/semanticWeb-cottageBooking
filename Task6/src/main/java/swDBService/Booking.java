@@ -44,8 +44,14 @@ public class Booking extends HttpServlet {
 			String param01 = request.getParameter("param01").toString();
 			String param02 = request.getParameter("param02").toString();
 			String param03 = request.getParameter("param03").toString();
+            String param04 = request.getParameter("param04").toString();
+            String param05 = request.getParameter("param05").toString();
+            String param06 = request.getParameter("param06").toString();
+            String param07 = request.getParameter("param07").toString();
+            String param08 = request.getParameter("param08").toString();
+            String param09 = request.getParameter("param09").toString();
 			String pathToDB = this.getServletContext().getRealPath("/BookingDB.ttl");
-			mediator.searchForResult(pathToDB, param01, param02, param03);
+			mediator.searchForResult(pathToDB, param01, param02, param03, param04, param05, param06, param07, param08, param09);
         }
 
         PrintWriter out = response.getWriter();
