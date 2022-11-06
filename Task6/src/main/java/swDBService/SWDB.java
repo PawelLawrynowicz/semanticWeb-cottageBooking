@@ -46,47 +46,55 @@ public class SWDB {
         OntModel ontModel = ModelFactory.createOntologyModel(ontModelSpec, model);
 
         String queryString =
-                "PREFIX : <http://localhost:8081/task6/BookingDB.ttl#>\n" +
-                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
-                "SELECT  ?bookerName ?bookingNumber ?cottageAddress\n" +
-                "        ?cottageImage ?cottagePlaces ?cottageBedrooms\n" +
-                "        ?cottageDistanceFromLake ?cottageClosestCity\n" +
-                "        ?cottageDistanceToCity ?bookingStartDate\n" +
-                "        ?bookingPeriod\n" +
-                "WHERE {\n" +
-                "    ?booking rdf:type :Booking .\n" +
-                "    ?cottage rdf:type :Cottage .\n" +
-                "    ?booking :hasCottage ?cottage .\n" +
-                "    ?cottage :hasName ?cottageName.\n" +
-                "    ?booking :hasBookerName ?bookerName .\n" +
-                "    ?booking :hasId ?bookingNumber .\n" +
-                "    ?cottage :hasAddress ?cottageAddress .\n" +
-                "    ?cottage :hasImage ?cottageImage .\n" +
-                "    ?cottage :hasPlaces ?cottagePlaces .\n" +
-                "    ?cottage :hasBedrooms ?cottageBedrooms .\n" +
-                "    ?cottage :hasDistanceFromTheLake ?cottageDistanceFromLake .\n" +
-                "    ?cottage :hasClosestCity ?cottageClosestCity .\n" +
-                "    ?cottage :hasDistanceToCity ?cottageDistanceToCity .\n" +
-                "    ?booking :hasStartDate ?bookingStartDate .\n" +
-                "    ?booking :hasBookingDuration ?bookingPeriod .\n" +
-                "    ?booking :startDayMaxShift ?bookingShift .\n" +
-                "    FILTER REGEX(?bookerName, '" + p1 + "', 'i') .\n" +
-                "    FILTER (?cottagePlaces > " + p2 + ") .\n" +
-                "    FILTER (?cottageBedrooms > " + p3 + ") .\n" +
-                "    FILTER (?cottageDistanceFromLake < " + p4 + ") .\n" +
-                "    FILTER REGEX(?cottageClosestCity, '" + p5 + "', 'i') .\n" +
-                "    FILTER (?cottageDistanceToCity < " + p6 + ") .\n" +
-                "    FILTER (?bookingPeriod > " + p7 + ") .\n" +
-                //"    FILTER (?bookingStartDate > \"2022-01-01\"^^xsd:date) .\n" +
-                "    FILTER (?bookingShift < " + p9 + ") . \n" +
-                "}";
+                "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n" +
+                        "PREFIX : <http://localhost:8081/task6/BookingDB.ttl#>\n" +
+                        "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+                        "SELECT  \n" +
+                        "\t\t?bookerName \n" +
+                        "\t\t?bookingNumber \n" +
+                        "\t\t?cottageAddress\n" +
+                        "\t\t?cottageImage \n" +
+                        "\t\t?cottagePlaces \n" +
+                        "\t\t?cottageBedrooms\n" +
+                        "\t\t?cottageDistanceFromLake \n" +
+                        "\t\t?cottageClosestCity\n" +
+                        "\t\t?cottageDistanceToCity \n" +
+                        "\t\t?bookingStartDate\n" +
+                        "\t\t?bookingPeriod\n" +
+                        "WHERE {\n" +
+                        "\t\t?booking rdf:type :Booking .\n" +
+                        "\t\t?cottage rdf:type :Cottage .\n" +
+                        "\t\t?booking :hasCottage ?cottage .\n" +
+                        "\t\t?cottage :hasName ?cottageName.\n" +
+                        "\t\t?booking :hasBookerName ?bookerName .\n" +
+                        "\t\t?booking :hasId ?bookingNumber .\n" +
+                        "\t\t?cottage :hasAddress ?cottageAddress .\n" +
+                        "\t\t?cottage :hasImage ?cottageImage .\n" +
+                        "\t\t?cottage :hasPlaces ?cottagePlaces .\n" +
+                        "\t\t?cottage :hasBedrooms ?cottageBedrooms .\n" +
+                        "\t\t?cottage :hasDistanceFromTheLake ?cottageDistanceFromLake .\n" +
+                        "\t\t?cottage :hasClosestCity ?cottageClosestCity .\n" +
+                        "\t\t?cottage :hasDistanceToCity ?cottageDistanceToCity .\n" +
+                        "\t\t?booking :hasStartDate ?bookingStartDate .\n" +
+                        "\t\t?booking :hasBookingDuration ?bookingPeriod .\n" +
+                        "\t\t?booking :startDayMaxShift ?bookingShift .\n" +
+                        "\t\tFILTER REGEX(?bookerName, '" + p1 + "', 'i') .\n" +
+                        "\t\tFILTER (?cottagePlaces > " + p2 + ") .\n" +
+                        "\t\tFILTER (?cottageBedrooms > " + p3 + ") .\n" +
+                        "\t\tFILTER (?cottageDistanceFromLake < " + p4 + ") .\n" +
+                        "\t\tFILTER REGEX(?cottageClosestCity, '" + p5 + "', 'i') .\n" +
+                        "\t\tFILTER (?cottageDistanceToCity < " + p6 + ") .\n" +
+                        "\t\tFILTER (?bookingPeriod > " + p7 + ") .\n" +
+                        "\t\tFILTER (xsd:date(?bookingStartDate) > xsd:date(\"" + p8 + "\")) .\n" +
+                        "\t\tFILTER (?bookingShift < " + p9 + ") . \n" +
+                        "}";
 
         Dataset dataset = DatasetFactory.create(ontModel);
         Query q = QueryFactory.create(queryString);
         QueryExecution exec = QueryExecutionFactory.create(q, dataset);
         ResultSet resultSet = exec.execSelect();
 
-        queryResult += "Results: ---";
+        queryResult += "Results:\n------------\n";
         while (resultSet.hasNext()) {
             QuerySolution row = resultSet.next();
             row.varNames().forEachRemaining(s -> {
