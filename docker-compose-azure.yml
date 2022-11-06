@@ -1,0 +1,12 @@
+version: '3'
+services:
+    tomcat:
+        image: 'tomcat:9-jdk11'
+        restart: always
+        ports:
+          - '80:8080'
+        environment:
+          WEBSITES_ENABLE_APP_SERVICE_STORAGE: TRUE
+        volumes:
+          - ${WEBAPP_STORAGE_HOME}/site/applications/fuseki/jena-fuseki-war-4.6.1.war:/usr/local/tomcat/webapps/fuseki.war
+          - ${WEBAPP_STORAGE_HOME}/site/applications/Ties4520Task6.war:/usr/local/tomcat/webapps/task6.war

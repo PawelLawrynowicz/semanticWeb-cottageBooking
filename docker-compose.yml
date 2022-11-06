@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+    tomcat:
+        image: 'tomcat:9-jdk11'
+        restart: on-failure:3
+        ports:
+        - '8888:8080'
+        volumes:
+        - ./fuseki/jena-fuseki-war-4.6.1.war:/usr/local/tomcat/webapps/fuseki.war
+        - ./Task6/target/Ties4520Task6.war:/usr/local/tomcat/webapps/task6.war
