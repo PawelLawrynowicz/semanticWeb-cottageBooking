@@ -46,7 +46,7 @@ function doAjax(url,query,callback,reqtype,getxml)
 {
 // create the XMLHTTPRequest object instance
 //alert('ajax-url: '+url);
-//alert('ajax-query: '+query);
+//alert('ajax-query.sparql: '+query.sparql);
 //alert('ajax-callback: '+callback);
 	var myreq = createREQ();
 
