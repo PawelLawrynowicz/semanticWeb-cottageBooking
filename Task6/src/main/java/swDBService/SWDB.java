@@ -46,7 +46,8 @@ public class SWDB {
         OntModel ontModel = ModelFactory.createOntologyModel(ontModelSpec, model);
 
         String queryString =
-                "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n" +
+                "PREFIX accomodation: <https://semantiweb-cottagebooking.azurewebsites.net/task6/ontology.owl#> " +
+                        "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n" +
                         "PREFIX : <http://localhost:8081/task6/BookingDB.ttl#>\n" +
                         "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
                         "SELECT  \n" +
@@ -62,22 +63,22 @@ public class SWDB {
                         "\t\t?bookingStartDate\n" +
                         "\t\t?bookingPeriod\n" +
                         "WHERE {\n" +
-                        "\t\t?booking rdf:type :Booking .\n" +
-                        "\t\t?cottage rdf:type :Cottage .\n" +
-                        "\t\t?booking :hasCottage ?cottage .\n" +
-                        "\t\t?cottage :hasName ?cottageName.\n" +
-                        "\t\t?booking :hasBookerName ?bookerName .\n" +
-                        "\t\t?booking :hasId ?bookingNumber .\n" +
-                        "\t\t?cottage :hasAddress ?cottageAddress .\n" +
-                        "\t\t?cottage :hasImage ?cottageImage .\n" +
-                        "\t\t?cottage :hasPlaces ?cottagePlaces .\n" +
-                        "\t\t?cottage :hasBedrooms ?cottageBedrooms .\n" +
-                        "\t\t?cottage :hasDistanceFromTheLake ?cottageDistanceFromLake .\n" +
-                        "\t\t?cottage :hasClosestCity ?cottageClosestCity .\n" +
-                        "\t\t?cottage :hasDistanceToCity ?cottageDistanceToCity .\n" +
-                        "\t\t?booking :hasStartDate ?bookingStartDate .\n" +
-                        "\t\t?booking :hasBookingDuration ?bookingPeriod .\n" +
-                        "\t\t?booking :startDayMaxShift ?bookingShift .\n" +
+                        "\t\t?booking rdf:type accomodation:Booking .\n" +
+                        "\t\t?cottage rdf:type accomodation:Cottage .\n" +
+                        "\t\t?booking accomodation:hasCottage ?cottage .\n" +
+                        "\t\t?cottage accomodation:hasName ?cottageName.\n" +
+                        "\t\t?booking accomodation:hasBookerName ?bookerName .\n" +
+                        "\t\t?booking accomodation:hasId ?bookingNumber .\n" +
+                        "\t\t?cottage accomodation:hasAddress ?cottageAddress .\n" +
+                        "\t\t?cottage accomodation:hasImage ?cottageImage .\n" +
+                        "\t\t?cottage accomodation:hasPlaces ?cottagePlaces .\n" +
+                        "\t\t?cottage accomodation:hasBedrooms ?cottageBedrooms .\n" +
+                        "\t\t?cottage accomodation:hasDistanceFromTheLake ?cottageDistanceFromLake .\n" +
+                        "\t\t?cottage accomodation:hasClosestCity ?cottageClosestCity .\n" +
+                        "\t\t?cottage accomodation:hasDistanceToCity ?cottageDistanceToCity .\n" +
+                        "\t\t?booking accomodation:hasStartDate ?bookingStartDate .\n" +
+                        "\t\t?booking accomodation:hasBookingDuration ?bookingPeriod .\n" +
+                        "\t\t?booking accomodation:startDayMaxShift ?bookingShift .\n" +
                         "\t\tFILTER REGEX(?bookerName, '" + p1 + "', 'i') .\n" +
                         "\t\tFILTER (?cottagePlaces > " + p2 + ") .\n" +
                         "\t\tFILTER (?cottageBedrooms > " + p3 + ") .\n" +
