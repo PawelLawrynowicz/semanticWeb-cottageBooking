@@ -1,0 +1,15 @@
+PREFIX accomodation: <https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#>
+
+INSERT DATA
+{
+    <http://xxxxxxx/cottage$id> accomodation:hasId $id ;
+                                accomodation:hasName $cottageName ;
+                                accomodation:hasDistanceToCity $distanceToCity ;
+                                accomodation:hasAddress $address ;
+                                accomodation:hasDistanceFromTheLake $distanceFromTheLake ;
+                                accomodation:hasImage $imageUrl ;
+                                accomodation:hasClosestCity $closestCity ;
+                                accomodation:hasBedrooms $bedrooms ;
+                                accomodation:hasPlaces $places
+    .
+}

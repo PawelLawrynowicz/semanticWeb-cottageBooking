@@ -1,0 +1,73 @@
+@prefix :             <https://semantiweb-cottagebooking.azurewebsites.net/db/BookingDB.ttl#> .
+@prefix accomodation: <https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#> .
+@prefix rdf:          <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:         <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:          <http://www.w3.org/2001/XMLSchema#> .
+
+:cottage1  rdf:type                     accomodation:Cottage ;
+           accomodation:hasAddress         "Kamapuru 3, 20920 Finland" ;
+           accomodation:hasBedrooms        2 ;
+           accomodation:hasClosestCity     "Oulu" ;
+           accomodation:hasDistanceFromTheLake
+                   "4.2"^^xsd:float ;
+           accomodation:hasDistanceToCity  "8.4"^^xsd:float ;
+           accomodation:hasImage           "https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/8/2020/01/Chancellors-Swiss-Cottage-920x616.jpg" ;
+           accomodation:hasName            "Old Cottage" ;
+           accomodation:hasPlaces          4 .
+
+:cottage2  rdf:type                     accomodation:Cottage ;
+           accomodation:hasAddress         "Tamperele 67, 42020 Finland" ;
+           accomodation:hasBedrooms        4 ;
+           accomodation:hasClosestCity     "Tampere" ;
+           accomodation:hasDistanceFromTheLake
+                   "1.2"^^xsd:float ;
+           accomodation:hasDistanceToCity  "2.4"^^xsd:float ;
+           accomodation:hasImage           "https://www.arts.gov/sites/default/files/styles/nea_media_large_16x9/public/CottageTomMarks.jpeg?h=52605a11&itok=0gO-wCVA" ;
+           accomodation:hasName            "New Cottage" ;
+           accomodation:hasPlaces          16 .
+
+:cottage3  rdf:type                     accomodation:Cottage ;
+           accomodation:hasAddress         "Helele 7, 10210 Finland" ;
+           accomodation:hasBedrooms        2 ;
+           accomodation:hasClosestCity     "Helsinki" ;
+           accomodation:hasDistanceFromTheLake
+                   "0.2"^^xsd:float ;
+           accomodation:hasDistanceToCity  "18.4"^^xsd:float ;
+           accomodation:hasImage           "https://images.unsplash.com/photo-1604601638406-edc29b54dcf7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" ;
+           accomodation:hasName            "Rustic Cottage" ;
+           accomodation:hasPlaces          6 .
+
+:booking1  rdf:type                 accomodation:Booking ;
+           accomodation:hasBookerName  "Ari Makalen" ;
+           accomodation:hasCottage     :cottage1 ;
+           accomodation:hasEndDate     "2023-07-25"^^xsd:date ;
+           accomodation:hasId          1 ;
+           accomodation:hasStartDate   "2023-07-18"^^xsd:date .
+
+:booking2  rdf:type                 accomodation:Booking ;
+           accomodation:hasBookerName  "Uuno Junttila" ;
+           accomodation:hasCottage     :cottage1 ;
+           accomodation:hasEndDate     "2023-02-05"^^xsd:date ;
+           accomodation:hasId          2 ;
+           accomodation:hasStartDate   "2023-01-29"^^xsd:date .
+
+:booking3  rdf:type                 accomodation:Booking ;
+           accomodation:hasBookerName  "Arsi Maunu" ;
+           accomodation:hasCottage     :cottage2 ;
+           accomodation:hasEndDate     "2023-02-06"^^xsd:date ;
+           accomodation:hasId          3 ;
+           accomodation:hasStartDate   "2023-01-30"^^xsd:date .
+
+:booking4  rdf:type                 accomodation:Booking ;
+           accomodation:hasBookerName  "Einari Kari" ;
+           accomodation:hasCottage     :cottage3 ;
+           accomodation:hasEndDate     "2023-02-07"^^xsd:date ;
+           accomodation:hasId          4 ;
+           accomodation:hasStartDate   "2023-01-31"^^xsd:date .
+
+:booking5  rdf:type                 accomodation:Booking ;
+           accomodation:hasBookerName  "Joona Uotila" ;
+           accomodation:hasCottage     :cottage1 ;
+           accomodation:hasEndDate     "2022-11-26"^^xsd:date ;
+           accomodation:hasId          5 ;
+           accomodation:hasStartDate   "2022-11-12"^^xsd:date .

@@ -1,0 +1,105 @@
+@prefix :       <https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml:    <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@base           <https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl> .
+
+<https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl> a owl:Ontology .
+
+#################################################################
+#  Classes
+#################################################################
+:Booking a owl:Class ; rdfs:subClass Of [
+    a owl:Restriction ;
+    owl:onProperty :requestedAs ;
+    owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+    owl:onClass :BookingRequest
+] .
+
+:BookingRequest a owl:Class ; rdfs:subClassOf [ a owl:Restriction
+    owl:onProperty :bookingProposals ;
+    owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+    owl:onClass :Booking
+] .
+
+:Cottage a owl:Class .
+
+#################################################################
+#  Object Properties
+#################################################################
+:hasCottage a rdf:Property ;
+    rdfs:domain :Booking ;
+    rdfs:range :Cottage .
+
+:bookingProposals a rdf:Property ;
+    rdfs:domain :BookingRequest ;
+    rdfs:range :Booking .
+
+:bookings a rdf:Property ;
+    rdfs:domain :BookingRequest ;
+    rdfs:range :Booking . #TODO as a list
+
+:requestedAs a rdf:Property ;
+    rdfs:domain :BookingRequest ;
+    rdfs:range :Booking .
+
+#################################################################
+#  Data Properties
+#################################################################
+:hasPlaces a rdf:Property ;
+    rdfs:domain :Cottage , :BookingRequest ;
+    rdfs:range xsd:nonNegativeInteger .
+
+:hasBedrooms a rdf:Property ;
+    rdfs:domain :Cottage , :BookingRequest ;
+    rdfs:range xsd:nonNegativeInteger .
+
+:hasClosestCity a rdf:Property ;
+    rdfs:domain :Cottage  , :BookingRequest;
+    rdfs:range xsd:string .
+
+:hasBookerName a rdf:Property ;
+    rdfs:domain :Booking  , :BookingRequest;
+    rdfs:range xsd:string .
+
+:hasImage a rdf:Property ;
+    rdfs:domain :Cottage ;
+    rdfs:range xsd:string .
+
+:hasId a rdf:Property ;
+    rdfs:main :Booking ;
+    rdfs:range xsd:integer .
+
+:hasDistanceFromTheLake a  rdf:Property ;
+    rdfs:domain :Cottage  , :BookingRequest;
+    rdfs:range xsd:float .
+
+:hasBookingDuration a rdf:Property ;
+    rdfs:domain :BookingRequest ;
+    rdfs:range xsd:nonNegativeInteger .
+
+:hasAddress a rdf:Property ;
+    rdfs:domain :Cottage ;
+    rdfs:range xsd:string .
+
+:hasDistanceToCity a rdf:Property ;
+    rdfs:domain :Cottage , :BookingRequest;
+    rdfs:range xsd:float .
+
+:hasStartDate a rdf:Property ;
+    rdfs:domain :Booking  , :BookingRequest;
+    rdfs:range xsd:date .
+
+:hasEndDate a rdf:Property ;
+    rdfs:domain :Booking ;
+    rdfs:range xsd:date .
+
+:hasName a rdf:Property ;
+    rdfs:domain :Cottage ;
+    rdfs:range xsd:string .
+
+:hasShift a rdf:Property ;
+    rdfs:domain :BookingRequest ;
+    rdfs:range xsd:integer .
