@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cottagebooking
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cottagebooking
+  template:
+    metadata:
+      labels:
+        app: cottagebooking
+    spec:
+      containers:
+        - name: cottagebooking
+          image: cottagebooking:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8082
+          resources:
+            limits:
+              memory: 512Mi
+              cpu: '1'
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cottagebooking-balancer
+spec:
+  selector:
+    app: cottagebooking
+  ports:
+    - protocol: TCP
+      port: 8000 # The port to expose to the outside
+      targetPort: 8082 # The port the application is running on in the pods
+  type: LoadBalancer
+  sessionAffinity: ClientIP

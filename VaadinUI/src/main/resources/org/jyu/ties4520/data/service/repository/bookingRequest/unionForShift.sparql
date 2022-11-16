@@ -1,0 +1,14 @@
+    UNION
+    {
+        ?cottage a accomodation:Cottage .
+        BIND("${startInfo}"^^xsd:date AS ?startDate) .
+        BIND("${endInfo}"^^xsd:date AS ?endDate) .
+        FILTER NOT EXISTS {
+            ?cottage a accomodation:Cottage .
+            ?booking a accomodation:Booking .
+            ?booking accomodation:hasCottage ?cottage .
+            ?booking accomodation:hasStartDate ?start .
+            ?booking accomodation:hasEndDate ?end .
+            FILTER(?start<=?endDate && ?startDate<=?end) .
+        }
+    }

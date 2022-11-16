@@ -1,0 +1,15 @@
+PREFIX accomodation: <https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#>
+
+SELECT
+DISTINCT ?cottage ?cottageName ?kmToTheNearestCity ?address ?metersToTheLake ?imageUrl ?nearestCityName ?numberOfBedrooms ?numberOfPlaces
+WHERE {
+    ?cottage a accomodation:Cottage .
+    ?cottage accomodation:hasName ?cottageName .
+    ?cottage accomodation:hasDistanceToCity ?kmToTheNearestCity .
+    ?cottage accomodation:hasAddress ?address .
+    ?cottage accomodation:hasDistanceFromTheLake ?metersToTheLake .
+    ?cottage accomodation:hasImage ?imageUrl .
+    ?cottage accomodation:hasClosestCity ?nearestCityName .
+    ?cottage accomodation:hasBedrooms ?numberOfBedrooms .
+    ?cottage accomodation:hasPlaces ?numberOfPlaces
+}
