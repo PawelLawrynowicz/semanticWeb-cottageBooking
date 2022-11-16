@@ -1,0 +1,30 @@
+@prefix accomodation:   <http://localhost:8081/task6/ontology.owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix sswap: <http://sswapmeet.sswap.info/sswap/> .
+
+resource:cottageBookingService rdf:type sswap:Resource;
+                               sswap:providedBy resource:resourceProvider ;
+                               sswap:name "Cottage Booking Service" ;
+                               sswap:oneLineDescription "A service that returns list of possible cottage bookings given user preferences." ;
+                               sswap:operatesOn    [rdf:type sswap:Graph ;
+                                                    sswap:hasMapping [
+                                                                 rdf:type sswap:Subject, accomodation:bookingRequest ;
+                                                                 accomodation:hasBookerName "Pawel Lawrynowicz" ;
+                                                                 accomodation:bookingProposals "booking3 booking4" ;
+                                                                 accomodation:bookings "booking1 booking2" ; #TODO on Bela branch
+                                                                 accomodation:requestedAs "booking3";
+                                                                 accomodation:hasPlaces "2" ;
+                                                                 accomodation:hasBedrooms "1" ;
+                                                                 accomodation:hasClosestCity "Tampere" ;
+                                                                 accomodation:hasDistanceToCity "2.0" ;
+                                                                 accomodation:hasDistanceFromTheLake "2.0" ;
+                                                                 accomodation:hasBookingDuration "5" ;
+                                                                 accomodation:hasStartDate "12-11-2022" ;
+                                                                 accomodation:hasShift "0" ;
+                                                                 sswap:mapsTo [
+                                                                              rdf:type sswap:Object, accomodation:Booking ;
+                                                                          ]
+                                                             ]
+                                        ] .

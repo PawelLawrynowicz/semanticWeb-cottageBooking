@@ -1,0 +1,30 @@
+@prefix accomodation:   <http://localhost:8081/task6/ontology.owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix sswap: <http://sswapmeet.sswap.info/sswap/> .
+
+resource:cottageBookingService rdf:type sswap:Resource;
+    sswap:providedBy resource:resourceProvider ;
+    sswap:name "Cottage Booking Service" ;
+    sswap:oneLineDescription "A service that returns list of possible cottage bookings given user preferences." ;
+    sswap:operatesOn    [rdf:type sswap:Graph ;
+                            sswap:hasMapping [
+                                rdf:type sswap:Subject, accomodation:bookingRequest ;
+                                accomodation:hasBookerName "" ;
+                                accomodation:bookingProposals "" ;
+                                accomodation:bookings "" ; #TODO on Bela branch
+                                accomodation:requestedAs "";
+                                accomodation:hasPlaces "" ;
+                                accomodation:hasBedrooms "" ;
+                                accomodation:hasClosestCity "" ;
+                                accomodation:hasDistanceToCity "" ;
+                                accomodation:hasDistanceFromTheLake "" ;
+                                accomodation:hasBookingDuration "" ;
+                                accomodation:hasStartDate "" ;
+                                accomodation:hasShift "" ;
+                                sswap:mapsTo [
+                                    rdf:type sswap:Object, accomodation:Booking ;
+                                ]
+                            ]
+                        ] .
