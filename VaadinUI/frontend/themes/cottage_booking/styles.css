@@ -1,0 +1,8 @@
+@import url('./main-layout.css');
+@import url('./views/bookings-view.css');
+@import url('./views/cottages-view.css');
+@import url('./views/cottages2-view.css');
+@import url('./views/request-view.css');
+@import url('./views/proposals-view.css');
+@import url('./views/booking-requests-view.css');
+@import url('line-awesome/dist/line-awesome/css/line-awesome.min.css');

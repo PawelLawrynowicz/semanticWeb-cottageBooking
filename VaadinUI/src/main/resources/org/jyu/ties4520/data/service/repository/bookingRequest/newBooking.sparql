@@ -1,0 +1,11 @@
+PREFIX accomodation: <https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#>
+
+INSERT DATA
+{
+    <http://xxxxxxx/booking${id}> accomodation:hasId ${id} ;
+                                accomodation:hasBookerName ${bookerName} ;
+                                accomodation:hasCottage ${cottage} ;
+                                accomodation:hasStartDate ${startDate} ;
+                                accomodation:hasEndDate ${endDate}
+    .
+}

@@ -7,4 +7,7 @@ services:
         - '8888:8080'
         volumes:
         - ./fuseki/jena-fuseki-war-4.6.1.war:/usr/local/tomcat/webapps/fuseki.war
-        - ./Task6/target/Ties4520Task6.war:/usr/local/tomcat/webapps/task6.war
+        - ./VaadinUI/CottageBookingVaadinUI.war:/usr/local/tomcat/webapps/ui.war
+        - ./JenaDB/CottageBookingJenaDB.war:/usr/local/tomcat/webapps/db.war
+        - ./config.ttl:/etc/fuseki/config.ttl
+        - ./fuseki/databases/:/etc/fuseki/databases/

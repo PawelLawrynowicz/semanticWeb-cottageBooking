@@ -1,0 +1,22 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX accomodation: <https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#>
+
+SELECT
+DISTINCT ?cottage ?startDate ?endInfo
+WHERE
+{
+    {
+        ?cottage a accomodation:Cottage .
+        BIND("${startInfo}"^^xsd:date AS ?startDate) .
+        BIND("${endInfo}"^^xsd:date AS ?endDate) .
+        FILTER NOT EXISTS {
+            ?cottage a accomodation:Cottage .
+            ?booking a accomodation:Booking .
+            ?booking accomodation:hasCottage ?cottage .
+            ?booking accomodation:hasStartDate ?start .
+            ?booking accomodation:hasEndDate ?end .
+            FILTER(?start<=?startDate && ?startDate<=?end) .
+        }
+    }
+    ${unionForShift}
+}
