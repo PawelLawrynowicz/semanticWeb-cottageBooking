@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:ns0="http://sswapmeet.sswap.info/sswap/"
+         xmlns:ns1="http://localhost:8081/task6/ontology.owl#">
+
+    <rdf:Description rdf:about="http://localhost:8080/SSWAP_Booking">
+        <rdf:type rdf:resource="http://sswapmeet.sswap.info/sswap/Resource"/>
+        <ns0:providedBy rdf:resource="http://localhost:8080/bookingDB-rdl"/>
+        <ns0:name>Cottage Booking Service</ns0:name>
+        <ns0:oneLineDescription>A service that returns list of possible cottage bookings given user preferences.</ns0:oneLineDescription>
+        <ns0:operatesOn>
+            <ns0:Graph>
+                <ns0:hasMapping>
+                    <ns0:Subject>
+                        <rdf:type rdf:resource="http://localhost:8081/task6/ontology.owl#bookingRequest"/>
+                        <ns1:hasBookerName>Pawel Lawrynowicz</ns1:hasBookerName>
+                        <ns1:hasPlaces>7</ns1:hasPlaces>
+                        <ns1:hasBedrooms>2</ns1:hasBedrooms>
+                        <ns1:hasDistanceFromTheLake>2.3</ns1:hasDistanceFromTheLake>
+                        <ns1:hasClosestCity>Tampere</ns1:hasClosestCity>
+                        <ns1:hasDistanceToCity>2.4</ns1:hasDistanceToCity>
+                        <ns1:hasBookingDuration>4</ns1:hasBookingDuration>
+                        <ns1:hasStartDate>11-12-2022</ns1:hasStartDate>
+                        <ns1:hasShift>1</ns1:hasShift>
+                        <ns0:mapsTo>
+                            <ns0:Object>
+                                <rdf:type rdf:resource="http://localhost:8081/task6/ontology.owl#Booking"/>
+                                <ns1:hasCottage>
+                                    <ns1:Cottage>
+                                        <ns1:hasAddress>Tamperella 23, 40740</ns1:hasAddress>
+                                        <ns1:hasBedrooms>2</ns1:hasBedrooms>
+                                        <ns1:hasClosestCity>Tampere</ns1:hasClosestCity>
+                                        <ns1:hasDistanceFromTheLake>0.5</ns1:hasDistanceFromTheLake>
+                                        <ns1:hasDistanceToCity>2</ns1:hasDistanceToCity>
+                                        <ns1:hasImage>tamperalla23.jpeg</ns1:hasImage>
+                                        <ns1:hasName>Old Cottage</ns1:hasName>
+                                        <ns1:hasPlaces>8</ns1:hasPlaces>
+                                    </ns1:Cottage>
+                                </ns1:hasCottage>
+
+                                <ns1:hasBookerName>Pawel Lawrynowicz</ns1:hasBookerName>
+                                <ns1:hasId>101</ns1:hasId>
+                                <ns1:hasStartDate>11-12-2022</ns1:hasStartDate>
+                                <ns1:hasEndDate>15-12-2022</ns1:hasEndDate>
+                            </ns0:Object>
+                        </ns0:mapsTo>
+
+                    </ns0:Subject>
+                </ns0:hasMapping>
+
+            </ns0:Graph>
+        </ns0:operatesOn>
+
+    </rdf:Description>
+
+</rdf:RDF>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:ns0="http://sswapmeet.sswap.info/sswap/">
+
+    <rdf:Description rdf:about="http://localhost:8080/resourceProvider">
+        <rdf:type>
+            <owl:Class rdf:about="http://sswapmeet.sswap.info/sswap/Provider">
+            </owl:Class>
+        </rdf:type>
+
+        <ns0:name>Cottage Booking SSWAP Provider</ns0:name>
+        <ns0:providesResource rdf:resource="http://localhost:8080/Booking"/>
+        <ns0:oneLineDescription>Resource provider aimed to integrate many cottage booking services</ns0:oneLineDescription>
+    </rdf:Description>
+
+</rdf:RDF>
