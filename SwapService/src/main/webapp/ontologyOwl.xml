@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+    <owl:Ontology rdf:about="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl">
+    </owl:Ontology>
+
+    <owl:Class rdf:about="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#Booking">
+    </owl:Class>
+
+    <owl:Class rdf:about="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#BookingRequest">
+    </owl:Class>
+
+    <owl:Class rdf:about="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#Cottage">
+    </owl:Class>
+
+    <rdf:Property rdf:about="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#hasCottage">
+        <rdfs:domain rdf:resource="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#Booking"/>
+        <rdfs:range rdf:resource="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#Cottage"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#bookingProposals">
+        <rdfs:domain rdf:resource="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#BookingRequest"/>
+        <rdfs:range rdf:resource="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#Booking"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#bookings">
+        <rdfs:domain rdf:resource="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#BookingRequest"/>
+        <rdfs:range rdf:resource="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#Booking"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#requestedAs">
+        <rdfs:domain rdf:resource="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#BookingRequest"/>
+        <rdfs:range rdf:resource="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#Booking"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#hasPlaces">
+        <rdfs:domain rdf:resource="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#Cottage"/>
+        <rdfs:domain rdf:resource="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#BookingRequest"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#hasBedrooms">
+        <rdfs:domain rdf:resource="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#Cottage"/>
+        <rdfs:domain rdf:resource="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#BookingRequest"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#hasClosestCity">
+        <rdfs:domain rdf:resource="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#Cottage"/>
+        <rdfs:domain rdf:resource="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#BookingRequest"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#hasBookerName">
+        <rdfs:domain rdf:resource="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#Booking"/>
+        <rdfs:domain rdf:resource="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#BookingRequest"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#hasImage">
+        <rdfs:domain rdf:resource="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#Cottage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#hasId">
+        <rdfs:main rdf:resource="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#Booking"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#hasDistanceFromTheLake">
+        <rdfs:domain rdf:resource="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#Cottage"/>
+        <rdfs:domain rdf:resource="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#BookingRequest"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#hasBookingDuration">
+        <rdfs:domain rdf:resource="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#BookingRequest"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#hasAddress">
+        <rdfs:domain rdf:resource="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#Cottage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#hasDistanceToCity">
+        <rdfs:domain rdf:resource="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#Cottage"/>
+        <rdfs:domain rdf:resource="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#BookingRequest"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#hasStartDate">
+        <rdfs:domain rdf:resource="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#Booking"/>
+        <rdfs:domain rdf:resource="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#BookingRequest"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#hasEndDate">
+        <rdfs:domain rdf:resource="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#Booking"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#hasName">
+        <rdfs:domain rdf:resource="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#Cottage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#hasShift">
+        <rdfs:domain rdf:resource="https://semantiweb-cottagebooking.azurewebsites.net/db/ontology.owl#BookingRequest"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </rdf:Property>
+
+</rdf:RDF>

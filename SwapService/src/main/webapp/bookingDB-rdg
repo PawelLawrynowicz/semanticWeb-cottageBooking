@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:resource="http://localhost:8081/service/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:sswap="http://sswapmeet.sswap.info/sswap/"
+         xmlns:accomodation="http://localhost:8081/service/ontologyOwl.xml#">
+
+    <rdf:Description rdf:about="http://localhost:8080/SSWAP_Booking">
+        <rdf:type rdf:resource="http://sswapmeet.sswap.info/sswap/Resource"/>
+        <sswap:providedBy rdf:resource="http://localhost:8080/service/ontologyOwl.xml"/>
+        <sswap:name>Cottage Booking Service</sswap:name>
+        <sswap:oneLineDescription>A service that returns list of possible cottage bookings given user preferences.</sswap:oneLineDescription>
+        <sswap:operatesOn>
+            <sswap:Graph>
+                <sswap:hasMapping>
+                    <sswap:Subject>
+                        <rdf:type rdf:resource="http://localhost:8081/service/ontologyOwl.xml#bookingRequest"/>
+                        <accomodation:hasBookerName></accomodation:hasBookerName>
+                        <accomodation:hasPlaces></accomodation:hasPlaces>
+                        <accomodation:hasBedrooms></accomodation:hasBedrooms>
+                        <accomodation:hasDistanceFromTheLake></accomodation:hasDistanceFromTheLake>
+                        <accomodation:hasClosestCity></accomodation:hasClosestCity>
+                        <accomodation:hasDistanceToCity></accomodation:hasDistanceToCity>
+                        <accomodation:hasBookingDuration></accomodation:hasBookingDuration>
+                        <accomodation:hasStartDate></accomodation:hasStartDate>
+                        <accomodation:hasShift></accomodation:hasShift>
+                        <sswap:mapsTo>
+                            <sswap:Object>
+                                <rdf:type rdf:resource="http://localhost:8081/service/ontologyOwl.xml#Booking"/>
+                                <accomodation:hasCottage>
+                                    <accomodation:Cottage>
+                                        <accomodation:hasAddress></accomodation:hasAddress>
+                                        <accomodation:hasBedrooms></accomodation:hasBedrooms>
+                                        <accomodation:hasClosestCity></accomodation:hasClosestCity>
+                                        <accomodation:hasDistanceFromTheLake></accomodation:hasDistanceFromTheLake>
+                                        <accomodation:hasDistanceToCity></accomodation:hasDistanceToCity>
+                                        <accomodation:hasImage></accomodation:hasImage>
+                                        <accomodation:hasName></accomodation:hasName>
+                                        <accomodation:hasPlaces></accomodation:hasPlaces>
+                                    </accomodation:Cottage>
+                                </accomodation:hasCottage>
+
+                                <accomodation:hasBookerName></accomodation:hasBookerName>
+                                <accomodation:hasId></accomodation:hasId>
+                                <accomodation:hasStartDate></accomodation:hasStartDate>
+                                <accomodation:hasEndDate></accomodation:hasEndDate>
+                            </sswap:Object>
+                        </sswap:mapsTo>
+
+                    </sswap:Subject>
+                </sswap:hasMapping>
+            </sswap:Graph>
+        </sswap:operatesOn>
+    </rdf:Description>
+</rdf:RDF>

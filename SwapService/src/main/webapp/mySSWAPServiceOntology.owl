@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://localhost:8081/service/mySSWAPServiceOntology.owl#"
+     xml:base="http://localhost:8081/service/mySSWAPServiceOntology.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://loccalhost:8081/service/mySSWAPServiceOntology.owl">
+        <rdfs:comment>...</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- calhost:8081/service/mySSWAPServiceOntology.owl#requestProperty_1 -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8081/service/mySSWAPServiceOntology.owl#requestProperty_1">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="http://localhost:8081/service/mySSWAPServiceOntology.owl#ServiceRequest"/>
+    </owl:DatatypeProperty>
+    
+<!-- calhost:8081/service/mySSWAPServiceOntology.owl#requestProperty_2 -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8081/service/mySSWAPServiceOntology.owl#requestProperty_2">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="http://localhost:8081/service/mySSWAPServiceOntology.owl#ServiceRequest"/>
+    </owl:DatatypeProperty>
+
+<!-- calhost:8081/service/mySSWAPServiceOntology.owl#requestProperty_3 -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8081/service/mySSWAPServiceOntology.owl#requestProperty_3">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="http://localhost:8081/service/mySSWAPServiceOntology.owl#ServiceRequest"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- calhost:8081/service/mySSWAPServiceOntology.owl#resultProperty_1 -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8081/service/mySSWAPServiceOntology.owl#resultProperty_1">
+        <rdfs:label>resultProperty_1</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="http://localhost:8081/service/mySSWAPServiceOntology.owl#ServiceResult"/>
+    </owl:DatatypeProperty>
+    
+
+<!-- calhost:8081/service/mySSWAPServiceOntology.owl#resultProperty_2 -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8081/service/mySSWAPServiceOntology.owl#resultProperty_2">
+        <rdfs:label>resultProperty_2</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="http://localhost:8081/service/mySSWAPServiceOntology.owl#ServiceResult"/>
+    </owl:DatatypeProperty>
+
+
+<!-- calhost:8081/service/mySSWAPServiceOntology.owl#resultProperty_3 -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8081/service/mySSWAPServiceOntology.owl#resultProperty_3">
+        <rdfs:label>resultProperty_3</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="http://localhost:8081/service/mySSWAPServiceOntology.owl#ServiceResult"/>
+    </owl:DatatypeProperty>
+
+
+
+   
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- calhost:8081/service/mySSWAPServiceOntology.owl#ServiceRequest -->
+
+    <owl:Class rdf:about="http://localhost:8081/service/mySSWAPServiceOntology.owl#ServiceRequest">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <owl:disjointWith rdf:resource="http://localhost:8081/service/mySSWAPServiceOntology.owl#ServiceResult"/>
+    </owl:Class>
+    
+
+
+    <!-- calhost:8081/service/mySSWAPServiceOntology.owl#ServiceResult -->
+
+    <owl:Class rdf:about="http://localhost:8081/service/mySSWAPServiceOntology.owl#ServiceResult">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+</rdf:RDF>
+    
+
+
+    
+
+

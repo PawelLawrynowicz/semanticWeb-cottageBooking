@@ -39,7 +39,7 @@ public class CottageBookingService extends HttpServlet {
 		//doGet(request, response);
 		CottageBookingQuery mediator = new CottageBookingQuery();
 
-		if(request.getParameter("reqType").toString().equals("doQuery")){
+		if("doQuery".equals(request.getParameter("reqType"))){
 			String param01 = request.getParameter("param01").toString();
 			String param02 = request.getParameter("param02").toString();
 			String param03 = request.getParameter("param03").toString();

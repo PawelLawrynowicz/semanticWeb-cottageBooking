@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file url="file://$PROJECT_DIR$/SSWAP/Java-API/overlays" />
     <file type="web" url="file://$PROJECT_DIR$" />
   </component>
   <component name="MavenProjectsManager">
@@ -11,6 +12,11 @@
         <option value="$PROJECT_DIR$/Task6/pom.xml" />
         <option value="$PROJECT_DIR$/VaadinUI/pom.xml" />
         <option value="$PROJECT_DIR$/JenaDB/pom.xml" />
+        <option value="$PROJECT_DIR$/SSWAP/Mediator/pom.xml" />
+        <option value="$PROJECT_DIR$/SSWAP/Service/pom.xml" />
+        <option value="$PROJECT_DIR$/SwapMediator/pom.xml" />
+        <option value="$PROJECT_DIR$/SwapService/pom.xml" />
+        <option value="$PROJECT_DIR$/SSWAP/Java-API/pom.xml" />
       </list>
     </option>
   </component>
